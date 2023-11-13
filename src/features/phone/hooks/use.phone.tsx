@@ -9,7 +9,7 @@ export function usePhone() {
 
   const addNumbers = (number: string) => {
     if (phoneState.phone.length < 9) {
-      dispatch(actions.dial(number));
+      dispatch(actions.phone(number));
     }
   };
 
