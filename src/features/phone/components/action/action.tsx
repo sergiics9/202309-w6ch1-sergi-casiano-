@@ -8,7 +8,9 @@ export function Action() {
       <a
         onClick={() => callButton()}
         href="#"
-        className={`${phoneState.phone.length === 9 ? 'call active' : 'call'}`}
+        className={`${
+          phoneState.phone.length === 9 ? 'call active' : 'call hidden'
+        }`}
       >
         Call
       </a>
@@ -16,7 +18,9 @@ export function Action() {
         onClick={() => hangButton()}
         href="#"
         className={`${
-          phoneState.loadState === 'calling' ? 'hang active' : 'hang hidden'
+          phoneState.loadState === 'Calling...'
+            ? 'hang active'
+            : 'hang hidden off'
         }`}
       >
         Hang

@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export type PhoneState = {
   phone: string;
-  loadState: 'phoneing' | 'calling' | '';
+  loadState: '' | 'Calling...';
 };
 
 const initialState: PhoneState = {
@@ -16,15 +16,15 @@ const phoneSlice = createSlice({
   reducers: {
     phone: (state, { payload }: { payload: string }) => {
       state.phone = state.phone + payload;
-      state.loadState = 'phoneing';
+      state.loadState = '';
     },
     delete: (state) => {
       state.phone = '';
       state.loadState = '';
     },
     call: (state, { payload }) => {
-      state.loadState = 'calling';
-      setTimeout(payload, 3000);
+      state.loadState = 'Calling...';
+      setTimeout(payload, 5000);
     },
     hang: (state) => {
       state.phone = '';
